@@ -7,14 +7,17 @@ class Circle
 {
  public:
   Circle(double x, double y, double r);
-  void scale(double factor);
+  bool scale(double factor);
   void draw();
-  double get_radius();
+  //when member function is called, object not modified
+  double get_radius() const;
+ //Class invariant
+ //m_r > 0
  private:
   double m_x, m_y, m_r;
 };
 
-double area(Circle x);
+double area(const Circle& x);
 
 int main()
 {
@@ -32,9 +35,14 @@ Circle::Circle(double x, double y, double r)
 
 }
 
-void Circle::scale(double factor)
+bool Circle::scale(double factor)
 {
+  if(factor < 0)
+  {
+    return false;
+  }
   m_r *= factor;
+  return true;
 }
 
 void Circle::draw()
@@ -42,12 +50,12 @@ void Circle::draw()
   return;
 }
 
-double Circle::get_radius()
+double Circle::get_radius() const
 {
   return m_r;
 }
 
-double area(Circle x)
+double area(const Circle& x)
 {
   return PI * x.get_radius() * x.get_radius(); 
 }
