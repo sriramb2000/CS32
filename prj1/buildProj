@@ -1,0 +1,3 @@
+#!/bin/sh
+
+g++ -o proj1 main.cpp Game.cpp Arena.cpp Player.cpp Zombie.cpp utilities.cpp
