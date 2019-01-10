@@ -1,7 +1,7 @@
 // Zombie.cpp
 #include "Zombie.h"
 #include "Arena.h"
-#include "utilities.cpp"
+#include "globals.h"
 
 #include <iostream>
 #include <string>

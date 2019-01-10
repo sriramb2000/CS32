@@ -4,8 +4,6 @@
 #include "Arena.h"
 #include "Player.h"
 
-#include "utilities.cpp"
-
 #include <iostream>
 #include <string>
 #include <random>
@@ -96,4 +94,16 @@ void Game::play()
         m_arena->moveZombies();
         m_arena->display();
     }
+}
+
+int decodeDirection(char dir)
+{
+  switch (dir)
+    {
+    case 'u':  return UP;
+    case 'd':  return DOWN;
+    case 'l':  return LEFT;
+    case 'r':  return RIGHT;
+    }
+  return -1;  // bad argument passed in!
 }

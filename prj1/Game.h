@@ -22,4 +22,7 @@ class Game
   private:
     Arena* m_arena;
 };
+
+int decodeDirection(char dir);
+
 #endif

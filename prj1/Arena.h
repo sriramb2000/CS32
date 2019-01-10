@@ -39,4 +39,7 @@ class Arena
     Zombie* m_zombies[MAXZOMBIES];
     int     m_nZombies;
 };
+
+void clearScreen();
+
 #endif
